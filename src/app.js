@@ -14,4 +14,6 @@ const server = new Server();
 //-------------------------------------------
 //Server proccess down here
 
-server.start(3003); // Enter port as a parameter
+server.start(3003, "https://dummyjson.com/products");
+// Enter port as a parameter
+// Enter api link as a parameter

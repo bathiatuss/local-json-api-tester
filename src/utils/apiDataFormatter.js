@@ -8,6 +8,12 @@ class JSONDataFormatter {
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>API Data</title>
           <style>
+          .header-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+          }
             body {
               font-family: Arial, sans-serif;
               margin: 20px;
@@ -39,7 +45,10 @@ class JSONDataFormatter {
         </head>
         <body>
           <div>
-            <h1>API Data</h1>
+            <div class="header-container">
+              <h1>API Data</h1>
+              <button onClick="window.location.reload();">Refresh Data</button>
+            </div>
             <pre>${JSON.stringify(data, null, 2)}</pre>
           </div>
         </body>

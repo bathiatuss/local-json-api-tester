@@ -6,17 +6,17 @@ class Server {
     this.apiHandler = new ApiHandler();
   }
 
-  start(PORT) {
+  start(PORT, API_URL) {
     const server = http.createServer(async (req, res) => {
       // CORS HEADERS
       res.setHeader("Access-Control-Allow-Origin", "*");
       res.setHeader("Access-Control-Allow-Methods", "GET");
       res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-      await this.apiHandler.handleRequest(req, res);
+      await this.apiHandler.handleRequest(req, res, API_URL);
     });
     server.listen(PORT, () => {
-      console.log("Listening on port 3003...");
+      console.log(`START | [${API_URL}] API listening on port ${PORT}...`);
     });
   }
 }
